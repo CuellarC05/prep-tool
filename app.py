@@ -97,15 +97,16 @@ def logout():
 
 
 # ── Logo ─────────────────────────────────────────────────────
+# Priority: PREP_TOOL_LOGO env var → bundled static/img/hibbs-logo.png → local dev path
 LOGO_PATH = os.environ.get("PREP_TOOL_LOGO", "")
+if not LOGO_PATH or not os.path.exists(LOGO_PATH):
+    LOGO_PATH = os.path.join(BASE_DIR, "static", "img", "hibbs-logo.png")
 if not LOGO_PATH or not os.path.exists(LOGO_PATH):
     LOGO_PATH = os.path.join(
         os.path.dirname(BASE_DIR),
         "..", "7. Hibbs Branding", "Logos",
         "utt_rgb_Level_1C_Hibbs_horizontal-white.png"
     )
-if not os.path.exists(LOGO_PATH):
-    LOGO_PATH = r"C:\Users\ccuel\OneDrive - University of Texas at Tyler\Hibbs Institute UT Tyler\7. Hibbs Branding\Logos\utt_rgb_Level_1C_Hibbs_horizontal-white.png"
 
 LOGO_DATA_URI = None
 if os.path.exists(LOGO_PATH):
