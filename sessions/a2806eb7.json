@@ -1,0 +1,359 @@
+{
+  "title": "From Programs to Payoffs",
+  "type": "pitch",
+  "subtitle": "Evidence from UT Tyler Alumni Outcomes & GenAI Adoption in Hiring",
+  "date": "March 2, 2026",
+  "format": "In-person pitch to UT System AI Idea Pitch panel (Round 2)",
+  "stats_banner": [
+    {"value": "80%", "label": "U.S. workers in occupations with GenAI task exposure"},
+    {"value": "19%", "label": "Workers where 50%+ of tasks face GenAI automation"},
+    {"value": "21%", "label": "U.S. workers actually using AI daily (2025)"},
+    {"value": "0", "label": "Program-level studies linking GenAI adoption to outcomes"},
+    {"value": "$25,769", "label": "Total seed investment requested"},
+    {"value": "12 mo", "label": "Project timeline"},
+    {"value": "4", "label": "Concrete deliverables"},
+    {"value": "NSF+", "label": "External funding pathway"}
+  ],
+  "talking_points": [
+    {
+      "id": "opening",
+      "label": "Opening Narrative",
+      "number": "Slide 2",
+      "timing": "~1 min",
+      "question": "How do you open the pitch to grab attention?",
+      "note": "<p>Open with the <strong>\"Imagine this\"</strong> hook:</p><p><em>\"A UT Tyler student picks their major today. Their family asks one question: <span class=\"key-stat\">Will this degree still pay off when AI changes everything?</span>\"</em></p><p>Pause. Let it land.</p><p>Then: <em>\"Today, we cannot answer that question with evidence. This project is filling that gap.\"</em></p><p><span class=\"transition\">Transition: That's the problem we're solving. Let me show you the data.</span></p>",
+      "source": "Slide 2 — Opening Narrative",
+      "tip_do": "Deliver the family question with genuine emotion. Pause after it. Let the room feel the weight.",
+      "tip_dont": "Don't rush past the opening. This emotional hook is your most powerful moment."
+    },
+    {
+      "id": "problem",
+      "label": "The Problem",
+      "number": "Slide 3",
+      "timing": "~2 min",
+      "question": "What problem does this project address?",
+      "note": "<p><strong>The Data Exists. The Connections Don't.</strong></p><p>Walk through the stat cascade — each one builds on the last:</p><p>1. <span class=\"key-stat\">80%</span> of U.S. workers are in occupations with at least 10% GenAI task exposure (Eloundou et al., OpenAI & UPenn, 2023).</p><p>2. <span class=\"key-stat\">19%</span> are in jobs where 50%+ of tasks face automation.</p><p>3. <span class=\"key-stat\">21%</span> of American workers are already using AI at work right now (Pew, 2025).</p><p>4. The punchline: <span class=\"key-stat\">Zero</span> program-level studies link GenAI adoption to actual outcomes.</p><p>Then frame the gap: Unlike past automation that targeted manual labor, <strong>GenAI hits high-income, white-collar roles</strong> — software, legal, finance, advanced education. OpenAI/UPenn, EY (~66%), and Indeed (~65%) all confirm it.</p><p><strong>The Gap We're Filling:</strong> No one has connected actual GenAI adoption from job postings to real alumni outcomes, program by program.</p><p><span class=\"transition\">Transition: So what do we do about it? Let me show you our solution.</span></p>",
+      "source": "Eloundou et al. (2023); Pew Research Center (2025); EY; Indeed",
+      "tip_do": "Build the stats like a crescendo — 80%, 19%, 21%, then pause dramatically before revealing 'Zero.' That contrast is your strongest rhetorical moment.",
+      "tip_dont": "Don't cite all the sources verbally. Just say 'OpenAI research' and 'Pew.' If they want citations, they're in the slides."
+    },
+    {
+      "id": "solution",
+      "label": "Our Solution",
+      "number": "Slide 4",
+      "timing": "~1.5 min",
+      "question": "What is your proposed solution?",
+      "note": "<p><strong>A UT Tyler Evidence System</strong></p><p>Two data sources UT Tyler can access <strong>right now</strong>, connected for the first time:</p><p>1. <strong>JobsEQ</strong> (from RTI/Chmura) — Real-time job postings by SOC, region, and quarter. We use NLP and ML to extract GenAI skill requirements and build a <span class=\"key-stat\">GenAI Adoption Index</span>.</p><p>2. <strong>Steppingblocks</strong> — Alumni outcomes data: earnings by program and cohort.</p><p>These feed into our <strong>NLP + ML Engine</strong> → <strong>Econometric Analysis</strong> (Difference-in-Differences + Event Study) → which produces <strong>Program Briefs, a Working Paper, and a Dashboard</strong>.</p><p><strong>Key innovation:</strong> We measure actual GenAI <em>adoption</em> from real job postings — not theoretical exposure — and connect it directly to UT Tyler program-level alumni outcomes.</p><p><span class=\"transition\">Transition: Let me walk you through our three research aims.</span></p>",
+      "source": "Proposal methodology; JobsEQ (RTI); Steppingblocks",
+      "tip_do": "Walk through the pipeline visually — point to the slide as you narrate data sources → engine → outputs. Make it tangible.",
+      "tip_dont": "Don't get into NLP technical details here. Save methodology depth for Q&A."
+    },
+    {
+      "id": "aims",
+      "label": "Three Research Aims",
+      "number": "Slide 5",
+      "timing": "~1.5 min",
+      "question": "What are the three research aims?",
+      "note": "<p><strong>Measure → Analyze → Translate</strong></p><p><strong>Aim 1: Build the Index</strong> (Months 1-4)<br>Construct a GenAI Adoption Index from JobsEQ job postings using NLP/ML, by occupation, region, and quarter. This is a reproducible, updatable dataset.</p><p><strong>Aim 2: Test the Impact</strong> (Months 5-7)<br>Use quasi-experimental methods — Difference-in-Differences and event study designs — to estimate how GenAI adoption affects alumni earnings and career pathways.</p><p><strong>Aim 3: Deliver the Evidence</strong> (Months 8-12)<br>Translate findings into program briefs, a dashboard prototype, a working paper, and a dissemination panel with national experts.</p><p><strong>Every aim produces an actionable output</strong>, from a reproducible dataset to risk profiles to a campus event that strengthens UT Tyler's external funding position.</p><p><span class=\"transition\">Transition: So what does UT Tyler actually get from this? Let me be specific.</span></p>",
+      "source": "Proposal aims section",
+      "tip_do": "Use the gesture: 'Measure, Analyze, Translate' — three clear phases. Hold up fingers for each.",
+      "tip_dont": "Don't over-explain DiD/event study methodology. Just say 'rigorous quasi-experimental methods' and move on."
+    },
+    {
+      "id": "deliverables",
+      "label": "Deliverables",
+      "number": "Slide 6",
+      "timing": "~1.5 min",
+      "question": "What are the four deliverables?",
+      "note": "<p><strong>Four Deliverables, Lasting Impact</strong></p><p>1. <span class=\"key-stat\">GenAI Adoption Dataset</span> — Reproducible index panel with documentation and code, updatable every year. This is a <em>lasting asset</em>.</p><p>2. <span class=\"key-stat\">Working Paper</span> — Event-study and DiD analysis (two versions), suitable for journal submission. A <em>publication</em>.</p><p>3. <span class=\"key-stat\">Program Briefs + Dashboard</span> — Risk/opportunity profiles for UT Tyler programs, built for advising and planning. A <em>decision tool</em>.</p><p>4. <span class=\"key-stat\">AUBER + UT Tyler Panel</span> — National conference talk and campus event with two invited experts. <em>Visibility</em>.</p><p><strong>Strategic intelligence:</strong> This system tells UT Tyler which programs are positioned for GenAI <em>complementarity</em> and which face faster <em>task substitution</em>. That is evidence a dean can act on <em>tomorrow</em>.</p><p><span class=\"transition\">Transition: Let me introduce you to the team and the investment we're asking for.</span></p>",
+      "source": "Proposal deliverables section",
+      "tip_do": "Emphasize 'evidence a dean can act on tomorrow' — that's your ROI sound bite for this slide.",
+      "tip_dont": "Don't rush through all four. Give each deliverable a beat. They're your proof of tangibility."
+    },
+    {
+      "id": "team-budget",
+      "label": "Team & Budget",
+      "number": "Slide 7",
+      "timing": "~1.5 min",
+      "question": "Who is on the team and what is the budget?",
+      "note": "<p><strong>A Focused Team, A Lean Ask</strong></p><p><strong>Co-PIs:</strong></p><p><span class=\"key-stat\">Dr. Cecilia Cuellar, Ph.D.</span> — Economist and Research Analyst at the Hibbs Institute. Expertise in regional labor markets, econometric methods, and data-driven policy research.</p><p><span class=\"key-stat\">Dr. Manuel Reyes, D.E.D.</span> — Director of the Hibbs Institute. Deep experience in community engagement, applied economic research, and workforce development.</p><p><strong>Research Support:</strong> Graduate RA (10 hrs/wk, 20 wks) + Luisa Moraes, Undergrad RA (10 hrs/wk, 30 wks). Plus two invited external experts for the campus panel.</p><p><strong>Budget: <span class=\"key-stat\">$25,769</span></strong></p><p>Personnel (RAs): $7,900 (30.7%) | Conference (AUBER): $7,000 (27.2%) | Data (JobsEQ RTI): $5,000 (19.4%) | UT Tyler Panel Event: $5,000 (19.4%) | Fringe: $869 (3.4%)</p><p><strong>44% of the budget supports UT Tyler students</strong> through training, skill-building, and hands-on research exposure.</p><p><span class=\"transition\">Transition: And this seed investment opens doors to much bigger funding.</span></p>",
+      "source": "Proposal budget narrative",
+      "tip_do": "Hit the '44% supports students' line — that resonates with UT System panels. Also: 'lean ask' signals fiscal responsibility.",
+      "tip_dont": "Don't read every budget line item. Hit the total, the student investment angle, and the lean framing."
+    },
+    {
+      "id": "funding-pathway",
+      "label": "Funding Pathway",
+      "number": "Slide 8",
+      "timing": "~1 min",
+      "question": "What is the external funding pathway?",
+      "note": "<p><strong>This Seed Grows into National Funding</strong></p><p>The reproducible pipeline, validated index, and published evidence provide the <strong>preliminary data</strong> needed for competitive federal proposals:</p><p>1. <strong>NSF: Robust Intelligence (RI)</strong> — Computational research in AI, ML, and human language technologies.</p><p>2. <strong>NSF: Human-Centered Computing</strong> — Interdisciplinary research on computing's societal impact.</p><p>3. <strong>NEH: Humanities Perspectives on AI</strong> — Examining AI's impact on human systems and learning.</p><p>4. <strong>Mellon Foundation: Humanity AI</strong> — AI's role in humanities and social impact.</p><p><strong>Seed to Scale:</strong> A $25,769 investment today positions UT Tyler for NSF-level grants worth <span class=\"key-stat\">orders of magnitude more</span>, with the track record and data to compete.</p><p><span class=\"transition\">Transition: Let me close with what this all adds up to.</span></p>",
+      "source": "NSF; NEH; Mellon Foundation program descriptions",
+      "tip_do": "Name the specific agencies — it shows you've done the homework. Emphasize 'orders of magnitude more' for the ROI.",
+      "tip_dont": "Don't dwell on individual grant details. The point is: this seed makes us competitive for big federal money."
+    },
+    {
+      "id": "close",
+      "label": "The Close",
+      "number": "Slide 9",
+      "timing": "~1 min",
+      "question": "How do you close the pitch?",
+      "note": "<p><strong>From Anecdote to Evidence</strong></p><p>Come back to the opening: <em>\"So the next time a student asks 'will my degree pay off?' — UT Tyler answers with <span class=\"key-stat\">data, not guesswork</span>.\"</em></p><p>Four closing numbers:<br><span class=\"key-stat\">$25,769</span> — Seed Investment<br><span class=\"key-stat\">12 months</span> — Timeline<br><span class=\"key-stat\">4</span> — Concrete Deliverables<br><span class=\"key-stat\">NSF+</span> — External Pathway</p><p><em>\"A reproducible evidence system that helps UT Tyler students, advisors, and leadership navigate the GenAI labor market with confidence.\"</em></p><p>Pause. <strong>Thank you.</strong></p>",
+      "source": "Slide 9 — Closing",
+      "tip_do": "Circle back to the student question from the opening. This creates a narrative arc that sticks. Finish strong and confident.",
+      "tip_dont": "Don't introduce new information in the close. Just land the plane with the callback and four clean numbers."
+    }
+  ],
+  "practice_questions": [
+    {
+      "q": "In one sentence, what is this project about?",
+      "points": [
+        "A seed-funded study connecting GenAI adoption in job postings to UT Tyler alumni outcomes, program by program",
+        "Produces the first GenAI Adoption Index built from real job posting data",
+        "Delivers program-level briefs, a working paper, and a dashboard for advising"
+      ]
+    },
+    {
+      "q": "Why does UT Tyler need this now? What's the urgency?",
+      "points": [
+        "80% of U.S. workers are in GenAI-exposed occupations — this is happening now, not in the future",
+        "21% are already using AI at work daily (Pew, 2025)",
+        "Zero program-level studies connect GenAI adoption to actual outcomes",
+        "Students and families are already asking 'will this degree pay off?'",
+        "First-mover advantage: the first university to build this evidence system gains competitive positioning"
+      ]
+    },
+    {
+      "q": "How is your GenAI Adoption Index different from existing AI exposure measures?",
+      "points": [
+        "Existing studies (Eloundou, Pew) measure theoretical exposure — what tasks *could* be affected",
+        "We measure actual adoption — what employers are actually requesting in job postings right now",
+        "Use NLP/ML on JobsEQ real-time postings to extract GenAI skill requirements",
+        "Disaggregated by occupation, region, and quarter — not just national averages",
+        "Connected directly to program-level alumni outcomes via Steppingblocks"
+      ]
+    },
+    {
+      "q": "Walk me through the methodology. How rigorous is this?",
+      "points": [
+        "NLP pipeline classifies GenAI-related skills in JobsEQ postings across SOC codes",
+        "Econometric analysis uses Difference-in-Differences (DiD) and event study designs",
+        "Treatment: occupations experiencing rapid GenAI adoption; control: slow adopters",
+        "Outcomes: alumni earnings, employment rates, career pathways by UT Tyler program",
+        "Quasi-experimental design — the gold standard for causal inference when randomization isn't possible"
+      ]
+    },
+    {
+      "q": "What makes your team qualified?",
+      "points": [
+        "Dr. Cuellar: Ph.D. economist with expertise in labor markets, econometrics, and regional data analysis",
+        "Dr. Reyes: Hibbs Institute Director with community engagement and applied research leadership",
+        "Hibbs Institute track record: published reports on childcare, workforce, economic indicators",
+        "Already have institutional access to JobsEQ and Steppingblocks data",
+        "Graduate and undergraduate RA support — training the next generation of researchers"
+      ]
+    },
+    {
+      "q": "How do you justify the $25,769 budget?",
+      "points": [
+        "30.7% ($7,900) — Personnel: RA training and hands-on skill building",
+        "27.2% ($7,000) — AUBER national conference: visibility and dissemination",
+        "19.4% ($5,000) — JobsEQ data access from RTI",
+        "19.4% ($5,000) — UT Tyler campus panel with invited experts",
+        "3.4% ($869) — Fringe benefits",
+        "44% of the budget directly supports UT Tyler students",
+        "This is a lean ask that produces four deliverables and positions for federal grants"
+      ]
+    },
+    {
+      "q": "What happens after the 12 months? What's the long-term vision?",
+      "points": [
+        "Submit federal proposals: NSF Robust Intelligence, NSF Human-Centered Computing, NEH, Mellon Foundation",
+        "Preliminary data + published working paper strengthens every federal application",
+        "GenAI Adoption Index becomes a living tool, updated annually with new job posting data",
+        "Program briefs inform advising, curriculum planning, and institutional strategy",
+        "UT Tyler becomes the go-to university for evidence-based GenAI workforce research"
+      ]
+    },
+    {
+      "q": "What if GenAI doesn't disrupt the labor market as much as projected?",
+      "points": [
+        "We measure actual adoption, not projections — the data reveals the true state",
+        "Even moderate disruption requires workforce adaptation and evidence-based planning",
+        "The index and methodology remain valuable regardless — they're reusable infrastructure",
+        "If impact is lower than expected, that's also important evidence for planners",
+        "The investment in student training and national visibility pays off either way"
+      ]
+    },
+    {
+      "q": "Can you give a concrete example of how a dean would use this?",
+      "points": [
+        "Imagine the Business dean sees: accounting SOC codes have 65% GenAI adoption growth",
+        "Cross-referencing with Steppingblocks shows declining earnings trajectories for recent grads",
+        "The program brief flags accounting as 'high-risk for task substitution'",
+        "Action: integrate AI skills into accounting curriculum, advise students on complementary skills",
+        "Alternatively: a program with rising GenAI complementarity gets flagged as 'opportunity' for growth"
+      ]
+    },
+    {
+      "q": "How will you handle data access and privacy with Steppingblocks alumni data?",
+      "points": [
+        "UT Tyler already has institutional access to Steppingblocks — no new agreements needed",
+        "Steppingblocks provides aggregate alumni outcomes by program and cohort",
+        "No individual student records — we work with de-identified, program-level aggregations",
+        "JobsEQ is publicly purchasable commercial data — no privacy concerns",
+        "All methods and code will be documented for reproducibility and transparency"
+      ]
+    }
+  ],
+  "cheatsheet_cards": [
+    {
+      "icon": "📊",
+      "title": "Key Statistics",
+      "items": [
+        ["Workers in GenAI-exposed occupations", "80%"],
+        ["Workers with 50%+ task automation", "19%"],
+        ["Currently using AI at work (2025)", "21%"],
+        ["Program-level GenAI outcome studies", "0"],
+        ["Total seed request", "$25,769"],
+        ["Project timeline", "12 months"],
+        ["Concrete deliverables", "4"],
+        ["Student budget share", "44%"]
+      ]
+    },
+    {
+      "icon": "🎯",
+      "title": "Three Research Aims",
+      "items": [
+        ["Aim 1: Build the Index", "NLP/ML on JobsEQ (Mo 1-4)"],
+        ["Aim 2: Test the Impact", "DiD + Event Study (Mo 5-7)"],
+        ["Aim 3: Deliver Evidence", "Briefs, paper, panel (Mo 8-12)"],
+        ["Key innovation", "Actual adoption, not theoretical exposure"]
+      ]
+    },
+    {
+      "icon": "📋",
+      "title": "Four Deliverables",
+      "items": [
+        ["GenAI Adoption Dataset", "Reproducible, updatable annually"],
+        ["Working Paper", "Journal-ready, two versions"],
+        ["Program Briefs + Dashboard", "Risk/opportunity profiles"],
+        ["AUBER + UT Tyler Panel", "National conference + campus event"]
+      ]
+    },
+    {
+      "icon": "💰",
+      "title": "Budget Breakdown",
+      "items": [
+        ["Personnel (RAs)", "$7,900 (30.7%)"],
+        ["Conference (AUBER)", "$7,000 (27.2%)"],
+        ["Data (JobsEQ RTI)", "$5,000 (19.4%)"],
+        ["UT Tyler Panel Event", "$5,000 (19.4%)"],
+        ["Fringe Benefits", "$869 (3.4%)"],
+        ["Total Ask", "$25,769"]
+      ]
+    },
+    {
+      "icon": "👥",
+      "title": "Team",
+      "items": [
+        ["Dr. Cecilia Cuellar, Ph.D.", "Co-PI — Economist"],
+        ["Dr. Manuel Reyes, D.E.D.", "Co-PI — Director"],
+        ["Graduate RA", "10 hrs/wk, 20 wks"],
+        ["Luisa Moraes", "Undergrad RA, 10 hrs/wk, 30 wks"],
+        ["External Experts", "2 invited panelists"]
+      ]
+    },
+    {
+      "icon": "🚀",
+      "title": "Funding Pathway",
+      "items": [
+        ["NSF: Robust Intelligence", "AI/ML computational research"],
+        ["NSF: Human-Centered Computing", "Computing societal impact"],
+        ["NEH: Humanities + AI", "AI impact on human systems"],
+        ["Mellon Foundation", "AI + humanities/social impact"],
+        ["Value proposition", "$25K → orders of magnitude more"]
+      ]
+    },
+    {
+      "icon": "🔑",
+      "title": "Sound Bites",
+      "items": [
+        ["\"Will this degree still pay off?\"", "Opening hook"],
+        ["\"The data exists. The connections don't.\"", "Problem framing"],
+        ["\"Actual adoption, not theoretical exposure\"", "Innovation"],
+        ["\"Evidence a dean can act on tomorrow\"", "Impact"],
+        ["\"44% supports UT Tyler students\"", "Budget angle"],
+        ["\"Data, not guesswork\"", "Closing callback"]
+      ]
+    },
+    {
+      "icon": "📚",
+      "title": "Sources",
+      "items": [
+        ["Eloundou et al. (2023)", "OpenAI/UPenn — GPT exposure"],
+        ["Pew Research (2025)", "AI workforce adoption survey"],
+        ["EY (2024)", "~66% GenAI task exposure"],
+        ["Indeed (2024)", "~65% job posting exposure"],
+        ["JobsEQ / RTI / Chmura", "Real-time job posting data"],
+        ["Steppingblocks", "Alumni outcomes platform"]
+      ]
+    }
+  ],
+  "tips": [
+    "Open with the <b>student question hook</b> — 'Will this degree still pay off?' — then pause for effect",
+    "Build the stats like a <b>crescendo</b>: 80%... 19%... 21%... then <b>ZERO</b>. The contrast hits hardest.",
+    "Your innovation is <b>actual adoption vs. theoretical exposure</b> — hammer this distinction",
+    "Walk through the <b>pipeline visual</b> on Slide 4 — point as you narrate: data → engine → outputs",
+    "Three aims, three gestures: <b>Measure → Analyze → Translate</b>. Hold up fingers.",
+    "Land the deliverables as <b>tangible proof</b>: dataset, paper, briefs, panel. Not vague outcomes.",
+    "Hit the budget angle: <b>44% supports students</b> + 'lean ask' signals fiscal responsibility",
+    "Close by <b>circling back to the opening</b>: 'data, not guesswork.' Narrative arc is your strongest move.",
+    "In Q&A, keep answers to <b>60-90 seconds</b>. If they want more, they'll ask.",
+    "If pushed on methodology: <b>DiD + event study</b> is the gold standard for causal inference. Keep it simple."
+  ],
+  "pitch_variants": {
+    "30sec": "A UT Tyler student picks their major today and their family asks: will this degree still pay off when AI changes everything? Right now, we can't answer that with evidence. 80% of workers face GenAI task exposure, yet zero studies connect AI adoption to actual program outcomes. Our project builds the first GenAI Adoption Index from real job postings and links it to UT Tyler alumni outcomes — four deliverables in 12 months for $25,769, with a clear pathway to NSF-level funding.",
+    "60sec": "A UT Tyler student picks their major today and their family asks: will this degree still pay off when AI changes everything? Today, we cannot answer that question with evidence.\n\n80% of American workers are in GenAI-exposed occupations. 19% face 50%+ task automation. 21% are already using AI daily. Yet zero studies connect GenAI adoption to actual program outcomes.\n\nFrom Programs to Payoffs fills that gap. We build a GenAI Adoption Index from real job postings using NLP and machine learning, then connect it to UT Tyler alumni outcomes through rigorous econometric methods. The result: four deliverables — a reproducible dataset, a working paper, program-level risk briefs, and a national panel — all in 12 months for $25,769.\n\n44% of the budget directly supports UT Tyler students, and this seed investment positions us for NSF, NEH, and Mellon Foundation grants worth orders of magnitude more. So the next time a student asks, UT Tyler answers with data, not guesswork.",
+    "2min": "Let me start with a question. A UT Tyler student picks their major today. Their family asks: will this degree still pay off when AI changes everything?\n\nToday, we cannot answer that question with evidence. And that is the problem.\n\nHere are the numbers: 80% of American workers are in occupations with GenAI task exposure. 19% are in jobs where over half their tasks face automation. 21% are already using AI in their daily work. But here's the punchline: there are zero — literally zero — program-level studies that connect GenAI adoption to actual outcomes.\n\nThe data exists. The connections don't. That is the gap this project fills.\n\nFrom Programs to Payoffs is a 12-month applied research project. We use two data sources UT Tyler already has access to: JobsEQ for real-time job postings, and Steppingblocks for alumni outcomes. We apply NLP and machine learning to build a GenAI Adoption Index — not theoretical exposure, but actual employer adoption — and then use Difference-in-Differences and event study designs to measure how that adoption affects alumni earnings and careers, program by program.\n\nThree aims: build the index in months one through four, test the impact in months five through seven, and deliver the evidence in months eight through twelve.\n\nFour concrete deliverables. A reproducible GenAI Adoption Dataset, updatable every year. A journal-ready working paper. Program-level risk and opportunity briefs with a dashboard prototype. And an AUBER national conference presentation plus a UT Tyler campus panel with invited experts.\n\nThis is not just a research project. This is strategic intelligence. It tells a dean which programs face GenAI task substitution and which are positioned for complementarity. That is evidence you can act on tomorrow.\n\nOur team — Dr. Cecilia Cuellar and Dr. Manuel Reyes at the Hibbs Institute — has the expertise, the data access, and the track record. Total ask: $25,769. 44% of that directly supports UT Tyler students.\n\nBut here is the strategic play: this seed investment produces exactly the preliminary data, the published evidence, and the institutional partnerships that NSF, NEH, and the Mellon Foundation require for competitive proposals. We are talking about positioning UT Tyler for grants worth orders of magnitude more.\n\nSo the next time a student asks 'will my degree pay off?' — UT Tyler answers with data, not guesswork.\n\nThank you."
+  },
+  "key_messages": [
+    "80% of workers face GenAI exposure — this is happening now",
+    "Zero program-level studies connect GenAI adoption to outcomes",
+    "We measure actual adoption, not theoretical exposure — that's the innovation",
+    "Three phases: Measure → Analyze → Translate (12 months)",
+    "Four concrete deliverables: dataset, paper, briefs, panel",
+    "Evidence a dean can act on tomorrow",
+    "$25,769 seed with 44% supporting UT Tyler students",
+    "Positions UT Tyler for NSF-level grants worth orders of magnitude more"
+  ],
+  "objections": [
+    {
+      "objection": "How is this different from what Eloundou et al. and other studies already show?",
+      "response": "Eloundou and others measure theoretical exposure — what percentage of tasks could be affected by GPT. We measure actual adoption: what employers are requesting right now in real job postings. That's a fundamentally different signal. And critically, we connect it to program-level outcomes at a specific university. No one has done that. National averages don't help a UT Tyler dean plan their curriculum."
+    },
+    {
+      "objection": "Can NLP reliably identify GenAI requirements in job postings?",
+      "response": "Yes. The NLP pipeline builds on established computational linguistics methods for skill extraction from job postings. We're not inventing a new technique — we're applying proven methods to a new question. The index is validated against known benchmarks and the methodology is fully documented for reproducibility. This is also why we have the JobsEQ data budget — RTI provides structured posting data that makes classification more tractable."
+    },
+    {
+      "objection": "Is 12 months realistic for this scope?",
+      "response": "Absolutely. The timeline is sequential and focused: four months for index construction, three months for econometric analysis, and five months for deliverables and dissemination. We already have data access through institutional agreements. The team has the technical skills in place. And the RA hiring begins immediately. Each aim has a clear milestone, and we've built buffer into the translation phase."
+    },
+    {
+      "objection": "Why should we fund this at UT Tyler rather than a larger research institution?",
+      "response": "Three reasons. First, we have the institutional data access — both JobsEQ through the Hibbs Institute and Steppingblocks alumni outcomes. That's our unique advantage. Second, the Hibbs Institute has a track record of translating research into actionable community tools — not just academic papers. Third, this is about UT Tyler's own students and programs. The insights are most valuable to the institution that produced them."
+    },
+    {
+      "objection": "What if the econometric results are inconclusive?",
+      "response": "An inconclusive finding is still publishable and still valuable. It would mean GenAI adoption hasn't yet measurably impacted alumni outcomes — which is actionable intelligence for planning. But regardless of the causal results, the GenAI Adoption Index itself is a lasting data asset. The program briefs, the dashboard, and the panel all deliver value independent of the econometric estimates. We've designed the project so every phase produces something tangible."
+    },
+    {
+      "objection": "How do you ensure the GenAI Adoption Index stays current after the project ends?",
+      "response": "The index is built on a reproducible pipeline with documented code. JobsEQ data refreshes quarterly. Once the NLP classifier is trained, running it on new data is straightforward — a graduate RA can update it. This is not a one-time analysis; it's infrastructure. And that ongoing capability is exactly what makes our federal grant proposals competitive: we can demonstrate sustained capacity."
+    }
+  ],
+  "id": "a2806eb7",
+  "created": "2026-02-25T17:45:54.399994",
+  "modified": "2026-02-26T10:00:00.000000"
+}

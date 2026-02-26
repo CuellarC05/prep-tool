@@ -1,0 +1,290 @@
+{
+  "id": "ai-pitch-r2",
+  "title": "AI Exposure in East Texas",
+  "type": "pitch",
+  "subtitle": "UT System AI Grant Proposal - Round 2",
+  "date": "Fall 2025",
+  "format": "In-person pitch to UT System review panel",
+  "created": "2025-01-01T00:00:00",
+  "modified": "2025-01-01T00:00:00",
+  "stats_banner": [
+    {"value": "80%", "label": "U.S. workers in AI-exposed occupations"},
+    {"value": "19%", "label": "Workers in highly exposed jobs"},
+    {"value": "21%", "label": "Rural TX workers with high AI exposure"},
+    {"value": "0", "label": "Regional AI workforce studies in East Texas"}
+  ],
+  "talking_points": [
+    {
+      "id": "problem",
+      "label": "The Problem",
+      "number": "Opening",
+      "timing": "~2 min",
+      "question": "What problem does this proposal address?",
+      "note": "<p>Artificial intelligence is reshaping the American workforce at an unprecedented pace. According to Eloundou et al. (2023), <span class=\"key-stat\">80% of U.S. workers</span> are in occupations with at least some tasks exposed to AI, and <span class=\"key-stat\">19% are in highly exposed roles</span>.</p><p>In rural Texas, the picture is even more concerning: <span class=\"key-stat\">21% of workers</span> face high AI exposure, yet there are <span class=\"key-stat\">zero regional studies</span> examining what this means for East Texas communities specifically.</p><p>Pew Research (2023) confirms that AI exposure cuts across income levels - this is not just a tech-sector issue. Workers in administration, legal services, education, and healthcare are all affected.</p><p><span class=\"transition\">Transition: That gap - the total absence of regional data - is what this proposal addresses.</span></p>",
+      "source": "Eloundou et al. 2023; Pew Research Center 2023",
+      "tip_do": "Lead with the 80% stat, then narrow to East Texas. End with the zero.",
+      "tip_dont": "Don't get bogged down in AI technical definitions."
+    },
+    {
+      "id": "solution",
+      "label": "Our Solution",
+      "number": "Core Proposal",
+      "timing": "~2 min",
+      "question": "What is your proposed solution?",
+      "note": "<p>We propose <strong>AI Exposure in East Texas: Workforce Readiness for an AI-Driven Economy</strong>, a three-phase applied research project that will:</p><p>1. <strong>Assess</strong> AI exposure across all occupations in the 23-county East Texas region using federal O*NET data merged with local workforce statistics.</p><p>2. <strong>Engage</strong> the community through forums bringing together employers, educators, and workforce boards to translate findings into actionable strategies.</p><p>3. <strong>Deliver</strong> concrete tools: a Regional AI Exposure Index, a comprehensive technical report, and a policy brief for decision-makers.</p><p><span class=\"transition\">Transition: Let me walk you through each of these three aims.</span></p>",
+      "source": "Proposal narrative",
+      "tip_do": "Frame it as 'assess, engage, deliver' - a clear pipeline.",
+      "tip_dont": "Don't make it sound purely academic. Emphasize applied, action-oriented."
+    },
+    {
+      "id": "aim1",
+      "label": "Aim 1: Assessment",
+      "number": "Aim 1",
+      "timing": "~1 min",
+      "question": "What will the assessment phase involve?",
+      "note": "<p><strong>Aim 1: Regional AI Exposure Assessment</strong></p><p>We will merge O*NET occupational AI exposure scores with BLS and Census data for the 23-county East Texas region. This produces a <span class=\"key-stat\">Regional AI Exposure Index</span> that maps which occupations, industries, and communities are most affected.</p><p>No one has done this at the regional level for East Texas. This index becomes a foundational resource for workforce boards, community colleges, and policy makers.</p>",
+      "source": "O*NET, BLS, Census Bureau ACS",
+      "tip_do": "Emphasize that this is novel - no one has done this for East Texas.",
+      "tip_dont": "Don't over-explain the methodology. Focus on the output."
+    },
+    {
+      "id": "aim2",
+      "label": "Aim 2: Engagement",
+      "number": "Aim 2",
+      "timing": "~1 min",
+      "question": "How will you engage the community?",
+      "note": "<p><strong>Aim 2: Community Engagement Forums</strong></p><p>We will host community forums with employers, educators, workforce development boards, and local leaders to discuss findings and co-create strategies.</p><p>This is not a report that sits on a shelf. We bring stakeholders to the table to ensure the research translates into <span class=\"key-stat\">actionable workforce strategies</span>.</p>",
+      "source": "Proposal engagement plan",
+      "tip_do": "Give a concrete example: 'Imagine a Tyler workforce board seeing exactly which occupations need reskilling.'",
+      "tip_dont": "Don't present forums as a formality. Emphasize co-creation with community."
+    },
+    {
+      "id": "aim3",
+      "label": "Aim 3: Deliverables",
+      "number": "Aim 3",
+      "timing": "~1 min",
+      "question": "What are the concrete deliverables?",
+      "note": "<p><strong>Aim 3: Actionable Deliverables</strong></p><p>Four tangible outputs:</p><p>1. <span class=\"key-stat\">Regional AI Exposure Index</span> - an interactive tool mapping AI exposure across occupations and counties.</p><p>2. <span class=\"key-stat\">Technical Report</span> - comprehensive analysis with methodology, findings, and recommendations.</p><p>3. <span class=\"key-stat\">Community Forums</span> - structured engagement sessions producing stakeholder input.</p><p>4. <span class=\"key-stat\">Policy Brief</span> - a concise document for legislators, workforce boards, and educators.</p>",
+      "source": "Proposal deliverables section",
+      "tip_do": "List the four deliverables crisply. Show these are concrete, not vague.",
+      "tip_dont": "Don't skip the policy brief - it signals real-world impact."
+    },
+    {
+      "id": "team",
+      "label": "Team & Budget",
+      "number": "Team",
+      "timing": "~1.5 min",
+      "question": "Who is on the team and what is the budget?",
+      "note": "<p><strong>Principal Investigators:</strong></p><p><span class=\"key-stat\">Dr. Cecilia Cuellar, Ph.D.</span> (PI) - Economist and Research Analyst at the Hibbs Institute with expertise in regional economic analysis, labor markets, and data-driven policy research.</p><p><span class=\"key-stat\">Dr. Manuel Reyes, D.E.D.</span> (Co-PI) - Director of the Hibbs Institute with extensive experience in community engagement, workforce development, and applied economic research.</p><p><strong>Budget: <span class=\"key-stat\">$99,960</span></strong></p><p>Assessment: $44,000 (44%) | Engagement: $26,000 (26%) | Deliverables: $22,000 (22%) | Admin: $8,000 (8%)</p><p>The majority of funding goes directly to research and community engagement, not overhead.</p>",
+      "source": "Proposal budget narrative",
+      "tip_do": "Emphasize that 92% goes to direct project costs. Mention both PIs' qualifications briefly.",
+      "tip_dont": "Don't dwell on budget line items. Hit the total and the split."
+    },
+    {
+      "id": "impact",
+      "label": "Impact & Pathway",
+      "number": "Closing",
+      "timing": "~1.5 min",
+      "question": "What is the broader impact and funding pathway?",
+      "note": "<p>This project positions UT Tyler and the Hibbs Institute as <span class=\"key-stat\">regional leaders</span> in AI workforce research.</p><p><strong>Why this matters now:</strong> The federal government is pouring resources into AI workforce readiness (NSF, DOL, EDA). A UT System-funded pilot gives us the preliminary data and community partnerships to compete for <span class=\"key-stat\">federal grants</span> worth 10-50x this investment.</p><p><strong>Funding pathway:</strong> UT System seed funding leads to federal proposals to NSF Future of Work, DOL workforce grants, and EDA regional innovation programs.</p><p><strong>Bottom line:</strong> For under $100,000, we produce the first regional AI workforce study in East Texas, build community partnerships, and create a launchpad for millions in federal funding.</p>",
+      "source": "Proposal impact section",
+      "tip_do": "End strong with the ROI argument: '$100K now positions us for millions later.'",
+      "tip_dont": "Don't be vague about the federal pathway. Name specific agencies."
+    }
+  ],
+  "practice_questions": [
+    {
+      "q": "In one sentence, what is this project about?",
+      "points": [
+        "A regional study of AI's impact on the East Texas workforce",
+        "Produces the first AI Exposure Index for the 23-county region",
+        "Engages community stakeholders and delivers actionable tools",
+        "Positions UT Tyler for federal AI workforce funding"
+      ]
+    },
+    {
+      "q": "Why East Texas? Why now?",
+      "points": [
+        "Zero regional AI workforce studies exist for East Texas",
+        "80% of U.S. workers face AI exposure (Eloundou et al. 2023)",
+        "21% of rural Texas workers are highly exposed",
+        "Federal agencies are investing heavily in AI workforce readiness",
+        "First-mover advantage: be the regional leader before others step in"
+      ]
+    },
+    {
+      "q": "What makes your team qualified for this work?",
+      "points": [
+        "Dr. Cuellar: Economist with expertise in labor markets and regional data analysis",
+        "Dr. Reyes: Hibbs Institute Director with community engagement experience",
+        "Hibbs Institute track record: published reports on childcare, workforce, economic indicators",
+        "Existing relationships with workforce boards and community leaders"
+      ]
+    },
+    {
+      "q": "How will this research be different from national AI studies?",
+      "points": [
+        "National studies give averages, not regional specifics",
+        "We merge federal O*NET data with local BLS and Census data",
+        "Produce occupation-level exposure scores for East Texas specifically",
+        "Include community engagement - not just data, but co-created strategies",
+        "Actionable deliverables: index, report, forums, policy brief"
+      ]
+    },
+    {
+      "q": "What happens after this project ends?",
+      "points": [
+        "Submit federal proposals to NSF Future of Work, DOL, EDA",
+        "Preliminary data and community partnerships strengthen federal applications",
+        "AI Exposure Index becomes a living tool updated annually",
+        "Policy brief influences workforce board planning and college curricula",
+        "UT Tyler becomes the go-to institution for AI workforce research in the region"
+      ]
+    },
+    {
+      "q": "How do you justify the $99,960 budget?",
+      "points": [
+        "44% ($44K) goes to assessment research - the core analysis",
+        "26% ($26K) to community engagement forums",
+        "22% ($22K) to deliverables production",
+        "Only 8% ($8K) admin overhead",
+        "92% goes directly to research and engagement, not overhead",
+        "This investment positions UT Tyler for 10-50x return in federal grants"
+      ]
+    },
+    {
+      "q": "What if AI impacts are less severe than projected?",
+      "points": [
+        "The data speaks for itself - we measure actual exposure, not speculation",
+        "Even moderate AI exposure requires workforce adaptation",
+        "The tools we build (index, policy brief) remain valuable regardless",
+        "Better to be prepared and informed than caught off guard",
+        "Community engagement builds trust regardless of exposure severity"
+      ]
+    },
+    {
+      "q": "Can you describe the four deliverables briefly?",
+      "points": [
+        "Regional AI Exposure Index: interactive tool mapping exposure by occupation and county",
+        "Technical Report: full methodology, findings, recommendations",
+        "Community Forums: structured stakeholder engagement sessions",
+        "Policy Brief: concise document for legislators and workforce boards"
+      ]
+    }
+  ],
+  "cheatsheet_cards": [
+    {
+      "icon": "📊",
+      "title": "Key Statistics",
+      "items": [
+        ["Workers in AI-exposed occupations", "80%"],
+        ["Highly exposed workers", "19%"],
+        ["Rural TX high exposure", "21%"],
+        ["Regional AI studies for East TX", "0"],
+        ["Counties in study region", "23"],
+        ["Total budget", "$99,960"],
+        ["Direct project costs", "92%"]
+      ]
+    },
+    {
+      "icon": "🎯",
+      "title": "Three Aims",
+      "items": [
+        ["Aim 1: Regional Assessment", "$44K (44%)"],
+        ["Aim 2: Community Engagement", "$26K (26%)"],
+        ["Aim 3: Actionable Deliverables", "$22K (22%)"],
+        ["Admin overhead", "$8K (8%)"]
+      ]
+    },
+    {
+      "icon": "📋",
+      "title": "Four Deliverables",
+      "items": [
+        ["Regional AI Exposure Index", "Interactive tool"],
+        ["Technical Report", "Full analysis"],
+        ["Community Forums", "Stakeholder input"],
+        ["Policy Brief", "For decision-makers"]
+      ]
+    },
+    {
+      "icon": "👥",
+      "title": "Team",
+      "items": [
+        ["Dr. Cecilia Cuellar, Ph.D.", "PI - Economist"],
+        ["Dr. Manuel Reyes, D.E.D.", "Co-PI - Director"],
+        ["Graduate Research Assistant", "Data analysis support"],
+        ["Institution", "Hibbs Institute, UT Tyler"]
+      ]
+    },
+    {
+      "icon": "📚",
+      "title": "Source Quick-Reference",
+      "items": [
+        ["Eloundou et al. (2023)", "GPT exposure study"],
+        ["Pew Research Center (2023)", "AI workforce survey"],
+        ["O*NET / BLS", "Occupational data"],
+        ["Census Bureau ACS", "Regional demographics"],
+        ["NSF / DOL / EDA", "Federal funding targets"]
+      ]
+    },
+    {
+      "icon": "🔑",
+      "title": "Sound Bites",
+      "items": [
+        ["\"80% of workers face AI exposure\"", ""],
+        ["\"Zero regional studies for East Texas\"", ""],
+        ["\"Assess, engage, deliver\"", ""],
+        ["\"$100K now, millions in federal grants later\"", ""],
+        ["\"Not a report on a shelf - co-created strategies\"", ""],
+        ["\"First-mover advantage for UT Tyler\"", ""]
+      ]
+    }
+  ],
+  "tips": [
+    "Open with the <b>human impact</b> - 80% of workers affected - then narrow to East Texas",
+    "Keep the three aims crisp: <b>assess, engage, deliver</b>",
+    "Always connect back to <b>East Texas specifically</b> - this is a regional study",
+    "Emphasize the <b>zero</b> - no one has done this for our region",
+    "Frame the budget as an <b>investment</b>: $100K seed for millions in federal funding",
+    "End with the <b>funding pathway</b>: UT System leads to NSF, DOL, EDA",
+    "Have your <b>four deliverables</b> ready to list crisply if asked",
+    "Don't get pulled into technical AI debates - stay focused on <b>workforce impact</b>"
+  ],
+  "pitch_variants": {
+    "30sec": "AI is transforming the workforce - 80% of American workers are in AI-exposed occupations, yet there are zero regional studies for East Texas. Our proposal creates the first Regional AI Exposure Index for the 23-county region, engages community stakeholders, and delivers actionable tools for workforce readiness. For under $100,000, we position UT Tyler as the regional leader in AI workforce research and build the foundation for millions in federal funding.",
+    "60sec": "Artificial intelligence is reshaping the American workforce at an unprecedented pace. 80% of workers are in AI-exposed occupations. 19% are in highly exposed roles. In rural Texas, 21% of workers face high AI exposure. Yet there are zero regional studies examining what this means for East Texas communities.\n\nOur proposal - AI Exposure in East Texas - addresses this gap through three phases: first, we assess AI exposure across all occupations in the 23-county region. Second, we engage employers, educators, and workforce boards through community forums. Third, we deliver concrete tools: a Regional AI Exposure Index, a technical report, community forums, and a policy brief.\n\nLed by Dr. Cuellar and Dr. Reyes at the Hibbs Institute, this $99,960 investment produces the first regional AI workforce study for East Texas and positions UT Tyler for federal grants from NSF, DOL, and EDA worth 10 to 50 times this initial investment.",
+    "2min": "Let me paint a picture for you. Right now, 80% of American workers are in occupations with tasks exposed to artificial intelligence. That is not a future prediction - that is today, according to research by Eloundou and colleagues at OpenAI. 19% of workers are in highly exposed roles. And in rural Texas, 21% of workers face high AI exposure.\n\nBut here is the critical gap: there are zero - literally zero - regional studies examining what AI means for East Texas workers, employers, and communities. National averages tell us the trend. They do not tell Tyler, Longview, or Nacogdoches what to do about it.\n\nThat is what this proposal addresses. AI Exposure in East Texas: Workforce Readiness for an AI-Driven Economy is a three-phase applied research project.\n\nFirst, we assess: we merge federal O*NET occupational data with local BLS and Census statistics to create a Regional AI Exposure Index - the first of its kind for our 23-county region. This index maps exactly which occupations, industries, and communities are most affected.\n\nSecond, we engage: we host community forums bringing together employers, educators, workforce development boards, and local leaders. This is not a report that sits on a shelf. We co-create strategies with the people who will implement them.\n\nThird, we deliver: four concrete outputs. The AI Exposure Index as an interactive tool. A comprehensive technical report. Documented community forum proceedings. And a policy brief for legislators and workforce boards.\n\nOur team at the Hibbs Institute - Dr. Cecilia Cuellar as PI and Dr. Manuel Reyes as Co-PI - brings deep expertise in regional economic analysis and community engagement. We have the relationships, the data infrastructure, and the track record.\n\nThe total investment: $99,960, with 92% going directly to research and engagement. But here is why this is strategic: this project produces exactly the preliminary data and community partnerships that federal agencies like NSF, DOL, and EDA require for major grants. We are talking about positioning UT Tyler for 10 to 50 times this investment in federal funding.\n\nFor under $100,000, we become the regional authority on AI workforce readiness. We give our communities the data they need. And we build a launchpad for the future. Thank you."
+  },
+  "key_messages": [
+    "80% of workers are in AI-exposed occupations",
+    "Zero regional studies exist for East Texas",
+    "Three-phase approach: assess, engage, deliver",
+    "First Regional AI Exposure Index for 23-county region",
+    "Community co-creation, not just data analysis",
+    "Four concrete deliverables: Index, Report, Forums, Policy Brief",
+    "$99,960 investment with 92% to direct project costs",
+    "Positions UT Tyler for federal grants worth 10-50x this amount"
+  ],
+  "objections": [
+    {
+      "objection": "Why should UT Tyler lead this rather than a larger institution?",
+      "response": "The Hibbs Institute has deep roots in the East Texas community. We have existing relationships with workforce boards, employers, and local leaders that larger institutions lack. Our track record - published reports on childcare, workforce development, and economic indicators - demonstrates our capability. Being embedded in the region is our strategic advantage."
+    },
+    {
+      "objection": "Is $99,960 enough to produce meaningful results?",
+      "response": "Absolutely. 92% goes directly to research and engagement. The assessment leverages existing federal datasets (O*NET, BLS, Census) - we are not collecting primary data from scratch. The budget is lean and focused. And the real value is strategic: this pilot produces the preliminary findings needed to compete for federal grants worth 10-50x this amount."
+    },
+    {
+      "objection": "AI is changing so fast - won't this research be outdated quickly?",
+      "response": "That is precisely why we need a baseline now. The AI Exposure Index is designed as a living tool that can be updated annually as new O*NET data is released. The methodology we establish becomes a reusable framework. And the community partnerships we build endure beyond any single report."
+    },
+    {
+      "objection": "How is this different from national AI workforce studies?",
+      "response": "National studies give us averages. They tell us 80% of workers are affected nationally, but they do not map which specific occupations in Tyler or Longview are most at risk. Our Regional AI Exposure Index provides county-level, occupation-level specificity that does not exist anywhere. Local workforce boards cannot plan with national averages."
+    },
+    {
+      "objection": "What if the community forums do not produce meaningful input?",
+      "response": "We have experience running successful community engagement through the Hibbs Institute. The forums are structured with data presentations followed by facilitated discussion. We are not asking people to speculate - we are showing them specific data about their community and asking how to act on it. That combination of evidence plus local knowledge consistently produces actionable insights."
+    }
+  ]
+}

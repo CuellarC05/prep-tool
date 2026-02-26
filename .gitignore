@@ -17,11 +17,9 @@ env/
 .env
 *.env.local
 
-# ── Session data (personal content) ──
-# Keep your personal prep sessions private.
-# Only the sample session ships with the repo.
-sessions/*.json
-!sessions/sample-demo.json
+# ── Session data ─────────────────────
+# All sessions are included so they deploy to Render.
+# Add specific files here if you want to exclude any.
 
 # ── Temp / OS files ──────────────────
 .DS_Store
