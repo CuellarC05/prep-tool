@@ -1,0 +1,135 @@
+{% extends "base.html" %}
+{% block title %}Dashboard{% endblock %}
+
+{% block content %}
+<div class="container">
+
+    <!-- ═══ HERO ═══ -->
+    <section class="hero">
+        <div class="hero-text">
+            <h2>Your Prep Sessions</h2>
+            <p>Prepare for interviews, rehearse presentations, and nail your pitches.</p>
+        </div>
+        <a href="{{ url_for('new_session') }}" class="btn btn-primary btn-lg">
+            <i class="fa-solid fa-plus"></i> Create New Session
+        </a>
+    </section>
+
+    <!-- ═══ TYPE FILTER ═══ -->
+    {% if sessions %}
+    <div class="filter-bar">
+        <button class="filter-chip active" data-filter="all">
+            <i class="fa-solid fa-layer-group"></i> All
+            <span class="chip-count">{{ sessions|length }}</span>
+        </button>
+        {% for key, meta in types.items() %}
+        {% set count = sessions|selectattr("type", "equalto", key)|list|length %}
+        {% if count > 0 %}
+        <button class="filter-chip" data-filter="{{ key }}">
+            <i class="fa-solid {{ meta.icon }}"></i> {{ meta.label }}
+            <span class="chip-count">{{ count }}</span>
+        </button>
+        {% endif %}
+        {% endfor %}
+    </div>
+    {% endif %}
+
+    <!-- ═══ SESSION GRID ═══ -->
+    {% if sessions %}
+    <div class="session-grid" id="session-grid">
+        {% for s in sessions %}
+        <div class="session-card" data-type="{{ s.type }}">
+            <div class="session-card-header">
+                <span class="type-badge type-badge--{{ s.type }}">
+                    <i class="fa-solid {{ types[s.type].icon if s.type in types else 'fa-file' }}"></i>
+                    {{ types[s.type].label if s.type in types else s.type }}
+                </span>
+                {% if s.date %}
+                <span class="session-date"><i class="fa-regular fa-calendar"></i> {{ s.date }}</span>
+                {% endif %}
+            </div>
+
+            <h3 class="session-card-title">{{ s.title or "Untitled" }}</h3>
+            {% if s.subtitle %}
+            <p class="session-card-subtitle">{{ s.subtitle }}</p>
+            {% endif %}
+
+            <div class="session-card-stats">
+                {% set tp_count = s.get("talking_points", [])|length %}
+                {% set pq_count = s.get("practice_questions", [])|length %}
+                {% if tp_count %}
+                <span><i class="fa-solid fa-comments"></i> {{ tp_count }} talking points</span>
+                {% endif %}
+                {% if pq_count %}
+                <span><i class="fa-solid fa-dumbbell"></i> {{ pq_count }} practice Qs</span>
+                {% endif %}
+            </div>
+
+            <div class="session-card-actions">
+                <a href="{{ url_for('view_session', session_id=s.id) }}" class="btn btn-primary btn-sm">
+                    <i class="fa-solid fa-play"></i> Open
+                </a>
+                <a href="{{ url_for('edit_session', session_id=s.id) }}" class="btn btn-ghost btn-sm">
+                    <i class="fa-solid fa-pen"></i> Edit
+                </a>
+                <form method="POST" action="{{ url_for('duplicate_session', session_id=s.id) }}" style="display:inline">
+                    <button type="submit" class="btn btn-ghost btn-sm" title="Duplicate">
+                        <i class="fa-regular fa-copy"></i>
+                    </button>
+                </form>
+                <form method="POST" action="{{ url_for('delete_session', session_id=s.id) }}"
+                      style="display:inline" onsubmit="return confirm('Delete this session?')">
+                    <button type="submit" class="btn btn-ghost btn-sm btn-danger" title="Delete">
+                        <i class="fa-solid fa-trash"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+    {% else %}
+    <!-- ═══ EMPTY STATE ═══ -->
+    <div class="empty-state">
+        <div class="empty-icon"><i class="fa-solid fa-clipboard-list"></i></div>
+        <h3>No Sessions Yet</h3>
+        <p>Create your first prep session to get started.</p>
+        <div class="empty-types">
+            <div class="empty-type-card">
+                <i class="fa-solid fa-microphone"></i>
+                <strong>Interview</strong>
+                <span>Question cards, speaker notes, on-camera tips</span>
+            </div>
+            <div class="empty-type-card">
+                <i class="fa-solid fa-chalkboard-user"></i>
+                <strong>Presentation</strong>
+                <span>Slide notes, rehearsal timer, audience Q&A</span>
+            </div>
+            <div class="empty-type-card">
+                <i class="fa-solid fa-rocket"></i>
+                <strong>Pitch</strong>
+                <span>Elevator variants, key messages, objection handling</span>
+            </div>
+        </div>
+        <a href="{{ url_for('new_session') }}" class="btn btn-primary btn-lg">
+            <i class="fa-solid fa-plus"></i> Create Your First Session
+        </a>
+    </div>
+    {% endif %}
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+document.querySelectorAll('.filter-chip').forEach(chip => {
+    chip.addEventListener('click', () => {
+        document.querySelectorAll('.filter-chip').forEach(c => c.classList.remove('active'));
+        chip.classList.add('active');
+        const filter = chip.dataset.filter;
+        document.querySelectorAll('.session-card').forEach(card => {
+            card.style.display = (filter === 'all' || card.dataset.type === filter) ? '' : 'none';
+        });
+    });
+});
+</script>
+{% endblock %}

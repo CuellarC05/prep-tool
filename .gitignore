@@ -1,0 +1,38 @@
+# ── Python ────────────────────────────
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+dist/
+build/
+.eggs/
+*.egg
+
+# ── Virtual environments ─────────────
+venv/
+.venv/
+env/
+
+# ── Environment / secrets ────────────
+.env
+*.env.local
+
+# ── Session data (personal content) ──
+# Keep your personal prep sessions private.
+# Only the sample session ships with the repo.
+sessions/*.json
+!sessions/sample-demo.json
+
+# ── Temp / OS files ──────────────────
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+result.json
+result2.json
+
+# ── IDE ──────────────────────────────
+.vscode/
+.idea/
+*.code-workspace

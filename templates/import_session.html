@@ -1,0 +1,279 @@
+{% extends "base.html" %}
+{% block title %}Import from File{% endblock %}
+
+{% block content %}
+<div class="container container--narrow" style="max-width:900px;">
+    <div class="form-page">
+        <h2><i class="fa-solid fa-file-import"></i> Import from File</h2>
+        <p class="form-intro">
+            Point to a folder and file to automatically extract content into a new prep session.
+            Supports <strong>reveal.js presentations</strong>, HTML files, and text/Markdown.
+        </p>
+
+        {% if error %}
+        <div class="alert alert-error" style="background:rgba(220,53,69,0.1); border:1px solid rgba(220,53,69,0.3); color:#dc3545; padding:16px 20px; border-radius:12px; margin-bottom:24px; display:flex; align-items:center; gap:12px;">
+            <i class="fa-solid fa-circle-exclamation"></i>
+            <span>{{ error }}</span>
+        </div>
+        {% endif %}
+
+        <!-- ═══ STEP 1: SELECT FILE ═══ -->
+        <form method="POST" action="{{ url_for('import_session') }}" class="prep-form" id="importForm">
+            <div class="import-step">
+                <div class="step-header">
+                    <span class="step-num">1</span>
+                    <span>Select Source File</span>
+                </div>
+
+                <div class="form-group">
+                    <label for="folder"><i class="fa-solid fa-folder-open"></i> Folder Path</label>
+                    <div style="display:flex; gap:10px;">
+                        <input type="text" id="folder" name="folder" required
+                               value="{{ folder_path }}"
+                               placeholder="e.g., C:\Users\...\UT Tyler - AI - RFP"
+                               style="flex:1;">
+                        <button type="button" class="btn btn-outline" onclick="scanFolder()" style="white-space:nowrap;">
+                            <i class="fa-solid fa-magnifying-glass"></i> Scan
+                        </button>
+                    </div>
+                    <small style="color:var(--text-muted); margin-top:4px; display:block;">
+                        Paste the full Windows path to the folder containing your file.
+                    </small>
+                </div>
+
+                <!-- File list (populated by scan) -->
+                <div id="fileList" class="file-list" style="{% if not available_files %}display:none;{% endif %}">
+                    <label style="font-weight:600; margin-bottom:8px; display:block;">
+                        <i class="fa-solid fa-file-lines"></i> Files Found:
+                    </label>
+                    <div id="fileListInner" class="file-grid">
+                        {% for f in available_files %}
+                        <label class="file-option {% if f.selected %}selected{% endif %}">
+                            <input type="radio" name="filename" value="{{ f.name }}"
+                                   {% if f.selected %}checked{% endif %}
+                                   onchange="this.closest('.file-grid').querySelectorAll('.file-option').forEach(o=>o.classList.remove('selected')); this.closest('.file-option').classList.add('selected');">
+                            <div class="file-card">
+                                <i class="fa-solid {% if f.type == 'revealjs' %}fa-display{% elif f.type == 'html' %}fa-code{% else %}fa-file-lines{% endif %}"></i>
+                                <div>
+                                    <strong>{{ f.name }}</strong>
+                                    <span class="file-type-badge">{{ f.type }}</span>
+                                </div>
+                            </div>
+                        </label>
+                        {% endfor %}
+                    </div>
+                </div>
+
+                <!-- Manual filename input (fallback) -->
+                <div class="form-group" style="margin-top:12px;">
+                    <label for="filename_manual"><i class="fa-solid fa-pen"></i> Or type filename</label>
+                    <input type="text" id="filename_manual" name="filename_text"
+                           value="{{ filename }}"
+                           placeholder="e.g., pitch_presentation.html">
+                </div>
+            </div>
+
+            <!-- ═══ ACTIONS ═══ -->
+            <div class="form-actions" style="margin-top:24px;">
+                <a href="{{ url_for('new_session') }}" class="btn btn-ghost">
+                    <i class="fa-solid fa-arrow-left"></i> Back
+                </a>
+                <button type="submit" name="action" value="preview" class="btn btn-outline btn-lg">
+                    <i class="fa-solid fa-eye"></i> Preview Import
+                </button>
+                {% if preview %}
+                <button type="submit" name="action" value="create" class="btn btn-primary btn-lg">
+                    <i class="fa-solid fa-check"></i> Create Session
+                </button>
+                {% endif %}
+            </div>
+        </form>
+
+        <!-- ═══ PREVIEW ═══ -->
+        {% if preview %}
+        <div class="import-preview" style="margin-top:36px;">
+            <div class="step-header">
+                <span class="step-num">2</span>
+                <span>Import Preview</span>
+            </div>
+
+            <div class="preview-header" style="display:flex; align-items:center; gap:16px; margin:20px 0;">
+                <div class="session-type-badge"
+                     style="background:{{ types[preview.type].color if preview.type in types else '#003A63' }}; color:white; padding:6px 14px; border-radius:8px; font-size:0.85em; font-weight:700;">
+                    <i class="fa-solid {{ types[preview.type].icon if preview.type in types else 'fa-file' }}"></i>
+                    {{ types[preview.type].label if preview.type in types else 'Unknown' }}
+                </div>
+                <div>
+                    <h3 style="margin:0; font-size:1.3em;">{{ preview.title }}</h3>
+                    {% if preview.subtitle %}
+                    <p style="margin:4px 0 0; color:var(--text-muted);">{{ preview.subtitle }}</p>
+                    {% endif %}
+                </div>
+            </div>
+
+            <!-- Stats -->
+            {% if preview.stats_banner %}
+            <div class="preview-section">
+                <h4><i class="fa-solid fa-chart-bar"></i> Stats Extracted ({{ preview.stats_banner|length }})</h4>
+                <div class="preview-stats-grid">
+                    {% for stat in preview.stats_banner %}
+                    <div class="preview-stat">
+                        <span class="preview-stat-val">{{ stat.value }}</span>
+                        <span class="preview-stat-lbl">{{ stat.label }}</span>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+            {% endif %}
+
+            <!-- Talking Points -->
+            {% if preview.talking_points %}
+            <div class="preview-section">
+                <h4><i class="fa-solid fa-list-check"></i> Talking Points ({{ preview.talking_points|length }})</h4>
+                <div class="preview-list">
+                    {% for tp in preview.talking_points %}
+                    <div class="preview-item">
+                        <span class="preview-item-num">{{ tp.number }}</span>
+                        <strong>{{ tp.label }}</strong>
+                        <span style="color:var(--text-muted); font-size:0.85em;">{{ tp.timing }}</span>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+            {% endif %}
+
+            <!-- Practice Questions -->
+            {% if preview.practice_questions %}
+            <div class="preview-section">
+                <h4><i class="fa-solid fa-comments"></i> Practice Questions ({{ preview.practice_questions|length }})</h4>
+                <div class="preview-list">
+                    {% for pq in preview.practice_questions %}
+                    <div class="preview-item">
+                        <i class="fa-solid fa-circle-question" style="color:var(--accent);"></i>
+                        <span>{{ pq.q }}</span>
+                        <span class="preview-badge">{{ pq.points|length }} points</span>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+            {% endif %}
+
+            <!-- Cheatsheet Cards -->
+            {% if preview.cheatsheet_cards %}
+            <div class="preview-section">
+                <h4><i class="fa-solid fa-clone"></i> Cheatsheet Cards ({{ preview.cheatsheet_cards|length }})</h4>
+                <div class="preview-cards-grid">
+                    {% for card in preview.cheatsheet_cards %}
+                    <div class="preview-card-mini">
+                        <span>{{ card.icon }}</span>
+                        <strong>{{ card.title }}</strong>
+                        <small>{{ card['items']|length }} items</small>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+            {% endif %}
+
+            <!-- Key Messages (pitch) -->
+            {% if preview.key_messages %}
+            <div class="preview-section">
+                <h4><i class="fa-solid fa-bullhorn"></i> Key Messages ({{ preview.key_messages|length }})</h4>
+                <div class="preview-list">
+                    {% for msg in preview.key_messages %}
+                    <div class="preview-item">
+                        <i class="fa-solid fa-check-circle" style="color:var(--accent);"></i>
+                        <span>{{ msg }}</span>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+            {% endif %}
+
+            <!-- Summary -->
+            <div class="preview-summary" style="margin-top:20px; padding:20px 24px; border-radius:12px; background:rgba(0,58,99,0.05); border:1px solid rgba(0,58,99,0.1);">
+                <p style="margin:0; font-size:0.95em;">
+                    <i class="fa-solid fa-circle-info" style="color:var(--primary);"></i>
+                    <strong>Ready to import:</strong>
+                    {{ preview.stats_banner|length }} stats,
+                    {{ preview.talking_points|length }} talking points,
+                    {{ preview.practice_questions|length }} practice questions,
+                    {{ preview.cheatsheet_cards|length }} cheatsheet cards
+                    {% if preview.key_messages %}, {{ preview.key_messages|length }} key messages{% endif %}.
+                    Click <strong>Create Session</strong> above to save.
+                </p>
+            </div>
+        </div>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+async function scanFolder() {
+    const folder = document.getElementById('folder').value.trim();
+    if (!folder) { alert('Please enter a folder path first.'); return; }
+
+    const btn = event.target.closest('button');
+    btn.disabled = true;
+    btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Scanning...';
+
+    try {
+        const resp = await fetch('/api/scan-folder', {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({ folder })
+        });
+        const data = await resp.json();
+
+        const listDiv = document.getElementById('fileList');
+        const inner = document.getElementById('fileListInner');
+
+        if (data.files && data.files.length > 0) {
+            inner.innerHTML = data.files.map(f => `
+                <label class="file-option">
+                    <input type="radio" name="filename" value="${f.name}"
+                           onchange="this.closest('.file-grid').querySelectorAll('.file-option').forEach(o=>o.classList.remove('selected')); this.closest('.file-option').classList.add('selected');">
+                    <div class="file-card">
+                        <i class="fa-solid ${f.type === 'revealjs' ? 'fa-display' : f.type === 'html' ? 'fa-code' : 'fa-file-lines'}"></i>
+                        <div>
+                            <strong>${f.name}</strong>
+                            <span class="file-type-badge">${f.type}</span>
+                            <span style="color:var(--text-muted); font-size:0.8em;">${f.size}</span>
+                        </div>
+                    </div>
+                </label>
+            `).join('');
+            listDiv.style.display = 'block';
+        } else {
+            inner.innerHTML = '<p style="color:var(--text-muted); padding:12px;">No importable files found in this folder.</p>';
+            listDiv.style.display = 'block';
+        }
+    } catch (err) {
+        alert('Error scanning folder: ' + err.message);
+    } finally {
+        btn.disabled = false;
+        btn.innerHTML = '<i class="fa-solid fa-magnifying-glass"></i> Scan';
+    }
+}
+
+// Sync manual filename with radio selection
+document.getElementById('importForm').addEventListener('submit', function(e) {
+    const radio = document.querySelector('input[name="filename"]:checked');
+    const manual = document.getElementById('filename_manual').value.trim();
+    if (!radio && !manual) {
+        e.preventDefault();
+        alert('Please select or type a filename.');
+        return;
+    }
+    // If manual is filled and no radio, create a hidden input
+    if (!radio && manual) {
+        const hidden = document.createElement('input');
+        hidden.type = 'hidden';
+        hidden.name = 'filename';
+        hidden.value = manual;
+        this.appendChild(hidden);
+    }
+});
+</script>
+{% endblock %}

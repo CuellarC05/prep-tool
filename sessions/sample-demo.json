@@ -1,0 +1,234 @@
+{
+  "id": "sample-demo",
+  "title": "AI in Workforce Development",
+  "type": "pitch",
+  "subtitle": "Sample Demo — Exploring GenAI's Impact on Regional Employment",
+  "date": "2026-03-15",
+  "format": "In-Person Pitch (10 min)",
+  "created": "2026-02-26T10:00:00",
+  "modified": "2026-02-26T10:00:00",
+
+  "stats_banner": [
+    {"value": "$85K", "label": "Requested Funding"},
+    {"value": "18 months", "label": "Project Duration"},
+    {"value": "3", "label": "Research Aims"},
+    {"value": "500+", "label": "Survey Target"},
+    {"value": "12", "label": "Regional Counties"},
+    {"value": "2 PhDs", "label": "Co-PIs"}
+  ],
+
+  "talking_points": [
+    {
+      "id": "opening",
+      "label": "Opening",
+      "number": "Slide 1",
+      "question": "The Big Picture: Why This Research Matters Now",
+      "timing": "1–2 min",
+      "note": "<p>Generative AI tools like ChatGPT and Copilot are transforming how firms recruit, screen, and hire workers. But we know very little about how this is playing out in <span class='key-stat'>regional labor markets</span> outside major tech hubs.</p><p>Our research will produce the first systematic analysis of GenAI adoption among employers in a mid-sized metro area, giving policymakers and educators actionable data.</p><span class='transition'>→ Let me walk you through how we plan to do this...</span>",
+      "tip_do": "Connect to the audience's local context — they care about their region.",
+      "tip_dont": "Don't lead with technical jargon or national statistics they've already seen.",
+      "source": "Slide 1"
+    },
+    {
+      "id": "problem",
+      "label": "Problem",
+      "number": "Slide 2",
+      "question": "The Research Gap We're Filling",
+      "timing": "1–2 min",
+      "note": "<p>Existing AI workforce research focuses on <span class='key-stat'>coastal tech corridors</span>. No peer-reviewed study has examined how small and mid-sized employers in areas like ours are integrating GenAI into their hiring pipelines.</p><p>Without this data, regional development agencies are making investment decisions in the dark.</p><span class='transition'>→ Here's our approach to closing this gap...</span>",
+      "tip_do": "Use a brief anecdote from a local employer you've spoken with.",
+      "tip_dont": "Don't overstate the crisis — be measured and evidence-based.",
+      "source": "Slide 2–3"
+    },
+    {
+      "id": "method",
+      "label": "Methods",
+      "number": "Slide 3",
+      "question": "Three Research Aims → One Clear Picture",
+      "timing": "2–3 min",
+      "note": "<p><strong>Aim 1:</strong> Survey <span class='key-stat'>500+ regional employers</span> across 12 counties to measure current GenAI adoption in hiring.</p><p><strong>Aim 2:</strong> Conduct <span class='key-stat'>30 in-depth interviews</span> with HR directors and hiring managers to understand the 'how' and 'why' behind adoption.</p><p><strong>Aim 3:</strong> Build a public <span class='key-stat'>AI Readiness Dashboard</span> that benchmarks our region against national trends.</p><span class='transition'>→ Let me show you what we'll deliver...</span>",
+      "tip_do": "Emphasize the mixed-methods approach — it's a strength.",
+      "tip_dont": "Don't get lost in methodological details; save that for Q&A.",
+      "source": "Slide 4–5"
+    },
+    {
+      "id": "budget",
+      "label": "Budget",
+      "number": "Slide 4",
+      "question": "Budget & Team Qualifications",
+      "timing": "1 min",
+      "note": "<p>The total budget of <span class='key-stat'>$85,000</span> covers: survey infrastructure ($15K), research assistants ($30K), PI summer salary ($25K), and dashboard development ($15K).</p><p>Our team combines economics expertise with industry connections — we already have commitments from 3 regional chambers of commerce to help with employer recruitment.</p>",
+      "tip_do": "Highlight the partnerships — they demonstrate feasibility.",
+      "tip_dont": "Don't apologize for the budget amount; it's well-justified.",
+      "source": "Slide 6"
+    },
+    {
+      "id": "close",
+      "label": "Close",
+      "number": "Slide 5",
+      "question": "The Ask & Expected Impact",
+      "timing": "1 min",
+      "note": "<p>With this funding, we will produce the region's first AI workforce readiness report, a peer-reviewed publication, and an open-access dashboard used by workforce boards and economic development agencies.</p><p>This is an investment in understanding <em>how our region navigates the AI transition</em> — not just documenting it, but equipping decision-makers to lead it.</p>",
+      "tip_do": "End with confidence — restate the value proposition clearly.",
+      "tip_dont": "Don't rush the close. Let the impact statement land.",
+      "source": "Slide 7"
+    }
+  ],
+
+  "practice_questions": [
+    {
+      "q": "What makes this proposal different from existing AI workforce studies?",
+      "points": [
+        "Regional focus — no comparable study exists for mid-sized metros",
+        "Mixed methods: quantitative survey + qualitative interviews",
+        "Actionable output: public dashboard, not just a paper",
+        "Existing community partnerships reduce recruitment risk"
+      ]
+    },
+    {
+      "q": "How will you achieve a 500-employer survey response rate?",
+      "points": [
+        "Three chamber of commerce partners already committed",
+        "Targeted LinkedIn and email outreach by industry sector",
+        "Incentive structure: summary report + dashboard access for participants",
+        "Prior survey work by PI achieved 38% response rate in the region"
+      ]
+    },
+    {
+      "q": "What will the AI Readiness Dashboard actually show?",
+      "points": [
+        "Adoption rates by industry, firm size, and county",
+        "Skills gap analysis: GenAI skills demanded vs. available",
+        "Interactive map with county-level benchmarks",
+        "Open-source, hosted at the university for long-term access"
+      ]
+    },
+    {
+      "q": "How does this benefit students and the university?",
+      "points": [
+        "Research assistantship for 2 graduate students",
+        "Curriculum data for departments considering AI integration",
+        "Co-authorship opportunity for student researchers",
+        "Dashboard becomes a teaching tool in economics and business courses"
+      ]
+    },
+    {
+      "q": "What happens if GenAI adoption turns out to be very low in the region?",
+      "points": [
+        "Low adoption is itself a significant finding — it signals a readiness gap",
+        "The dashboard would highlight where intervention is most needed",
+        "Qualitative interviews will capture barriers and concerns",
+        "Findings still publishable and policy-relevant regardless of direction"
+      ]
+    },
+    {
+      "q": "Why should we fund this now rather than waiting?",
+      "points": [
+        "GenAI adoption is accelerating — Q1 2026 is a critical measurement window",
+        "Early data positions the university as a regional thought leader",
+        "Waiting means missing the adoption curve and playing catch-up",
+        "Other regions are already commissioning similar studies"
+      ]
+    }
+  ],
+
+  "cheatsheet_cards": [
+    {
+      "icon": "🎯",
+      "title": "Research Aims",
+      "items": [
+        ["Aim 1: Employer Survey", "500+ firms, 12 counties"],
+        ["Aim 2: Qualitative Interviews", "30 HR directors"],
+        ["Aim 3: Public Dashboard", "Open-access, interactive"]
+      ]
+    },
+    {
+      "icon": "💰",
+      "title": "Budget Breakdown",
+      "items": [
+        ["Survey infrastructure", "$15,000"],
+        ["Research assistants", "$30,000"],
+        ["PI summer salary", "$25,000"],
+        ["Dashboard development", "$15,000"],
+        ["Total", "$85,000"]
+      ]
+    },
+    {
+      "icon": "📊",
+      "title": "Key Numbers",
+      "items": [
+        ["Target sample", "500+ employers"],
+        ["Counties covered", "12"],
+        ["In-depth interviews", "30"],
+        ["Project duration", "18 months"],
+        ["Team size", "2 PIs + 2 RAs"]
+      ]
+    },
+    {
+      "icon": "🤝",
+      "title": "Partnerships",
+      "items": [
+        ["Chamber of Commerce (East)", "Committed"],
+        ["Chamber of Commerce (Central)", "Committed"],
+        ["Chamber of Commerce (South)", "Committed"],
+        ["Regional Workforce Board", "Letter of Support"]
+      ]
+    },
+    {
+      "icon": "📋",
+      "title": "Deliverables",
+      "items": [
+        ["Peer-reviewed publication", "Year 2"],
+        ["AI Readiness Dashboard", "Month 12"],
+        ["Policy brief", "Month 15"],
+        ["Regional report", "Month 18"],
+        ["Dataset (de-identified)", "Month 18"]
+      ]
+    }
+  ],
+
+  "tips": [
+    "Know your <strong>3 aims</strong> cold — they're the spine of the pitch.",
+    "Pause after key statistics. Let the audience absorb them.",
+    "Make eye contact with each panel member at least once.",
+    "If you don't know an answer, say \"Great question — I'll follow up with specifics.\"",
+    "Keep the energy conversational, not lecture-style.",
+    "Practice the 2-minute pitch variant until it feels effortless.",
+    "Mention the community partnerships early — they signal credibility.",
+    "End 30 seconds early to invite questions. Panelists love that."
+  ],
+
+  "pitch_variants": {
+    "30sec": "We're studying how generative AI is reshaping hiring in our region. Through a 500-employer survey, 30 qualitative interviews, and a public AI Readiness Dashboard, we'll give workforce leaders the first real data on regional GenAI adoption — an $85K investment that positions our university as the go-to resource on AI and employment.",
+    "60sec": "Generative AI is transforming how companies recruit and hire, but all the research focuses on big coastal metros. No one has studied what's happening in regions like ours. We propose a rigorous mixed-methods study: a 500-employer survey across 12 counties, 30 in-depth interviews with HR directors, and a public AI Readiness Dashboard. Three chambers of commerce are already on board. For $85,000 over 18 months, we'll deliver a peer-reviewed publication, a policy brief, and the region's first AI workforce readiness report. This is about equipping our community to navigate the AI transition with data, not assumptions.",
+    "2min": "Thank you for your time. Let me tell you about a gap that's costing our region — not money, but insight.<br><br>Generative AI tools like ChatGPT are now embedded in hiring at major corporations. McKinsey reports 72% of large firms have adopted GenAI in some HR function. But here's the problem: <em>we have zero data on what's happening in mid-sized metros like ours.</em><br><br>Are local employers using AI to screen resumes? To write job descriptions? Are they skipping it entirely? We don't know — and neither do the workforce boards and economic development agencies making investment decisions for our region.<br><br>Our proposal fills this gap with three aims. First, we'll survey 500+ employers across 12 counties — we already have three chambers of commerce committed to recruitment. Second, we'll interview 30 HR directors in depth to understand not just 'if' but 'how' and 'why.' Third, we'll build a public AI Readiness Dashboard — interactive, open-access, and designed for policymakers.<br><br>The total cost is $85,000 over 18 months. Our team has the expertise, the partnerships, and the track record. This isn't just a research project — it's a public resource that positions our university as the regional authority on AI and workforce development.<br><br>I'd be happy to take any questions."
+  },
+
+  "key_messages": [
+    "First regional study of GenAI adoption in hiring — no comparable data exists",
+    "Mixed methods: 500-employer survey + 30 in-depth interviews = rigorous evidence",
+    "Public AI Readiness Dashboard — actionable, open-access, long-lived",
+    "Three community partners already committed — this is a collaborative effort",
+    "$85K is a modest investment for a major regional resource",
+    "Deliverables include a peer-reviewed publication and a policy brief"
+  ],
+
+  "objections": [
+    {
+      "objection": "Isn't this research already being done at the national level?",
+      "response": "National studies aggregate data that erases regional variation. A 72% adoption rate nationally could mean 90% in San Francisco and 20% here. Our study provides the granular, local data that actually informs regional policy."
+    },
+    {
+      "objection": "How do you know employers will respond to the survey?",
+      "response": "We have written commitments from three chambers of commerce to co-distribute the survey. My prior regional employer survey achieved a 38% response rate, well above the typical 15-20% for business surveys."
+    },
+    {
+      "objection": "What's the sustainability plan for the dashboard after funding ends?",
+      "response": "The dashboard will be hosted on university infrastructure at minimal cost. We're building it with open-source tools, and the Hibbs Institute has committed to maintaining it as a core public resource."
+    },
+    {
+      "objection": "Why not just focus on the survey without the interviews?",
+      "response": "Surveys tell us 'what' and 'how much,' but not 'why.' The qualitative interviews will reveal the motivations, barriers, and concerns behind adoption decisions — that's what makes policy recommendations credible."
+    }
+  ]
+}

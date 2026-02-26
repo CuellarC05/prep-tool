@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Prep Tool{% endblock %} — Hibbs Institute</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    {% block head %}{% endblock %}
+</head>
+<body>
+
+<!-- ═══ HEADER ═══ -->
+<header class="app-header">
+    <div class="header-inner">
+        <a href="{{ url_for('dashboard') }}" class="header-brand">
+            {% if logo %}
+            <img src="{{ logo }}" alt="Hibbs Institute" class="header-logo">
+            {% else %}
+            <span class="header-logo-text">Hibbs Institute</span>
+            {% endif %}
+            <div class="header-titles">
+                <h1>Prep Tool</h1>
+                <p>Interview &middot; Presentation &middot; Pitch</p>
+            </div>
+        </a>
+        <nav class="header-nav">
+            {% block header_nav %}
+            <a href="{{ url_for('dashboard') }}" class="nav-link"><i class="fa-solid fa-house"></i> Dashboard</a>
+            <a href="{{ url_for('new_session') }}" class="nav-link nav-link--accent"><i class="fa-solid fa-plus"></i> New Session</a>
+            {% endblock %}
+            <button class="theme-toggle" onclick="toggleTheme()" title="Toggle dark mode">
+                <i class="fa-solid fa-moon"></i>
+            </button>
+            {% if session.get('authenticated') %}
+            <a href="{{ url_for('logout') }}" class="nav-link" title="Sign out">
+                <i class="fa-solid fa-right-from-bracket"></i>
+            </a>
+            {% endif %}
+        </nav>
+    </div>
+</header>
+
+<!-- ═══ MAIN ═══ -->
+<main class="main-content">
+    {% block content %}{% endblock %}
+</main>
+
+<!-- ═══ FOOTER ═══ -->
+<footer class="app-footer">
+    <strong>Cecilia Cuellar, Ph.D.</strong> — Economist | Research Analyst<br>
+    <a href="https://www.uttyler.edu/hibbs/" target="_blank">Hibbs Institute for Business &amp; Economic Research</a>
+    — The University of Texas at Tyler
+</footer>
+
+<script src="{{ url_for('static', filename='js/app.js') }}"></script>
+{% block scripts %}{% endblock %}
+</body>
+</html>

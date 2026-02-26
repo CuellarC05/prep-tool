@@ -1,0 +1,215 @@
+{% extends "base.html" %}
+{% block title %}Edit — {{ session.title }}{% endblock %}
+
+{% block header_nav %}
+<a href="{{ url_for('view_session', session_id=session.id) }}" class="nav-link"><i class="fa-solid fa-eye"></i> View Session</a>
+<a href="{{ url_for('dashboard') }}" class="nav-link"><i class="fa-solid fa-house"></i> Dashboard</a>
+{% endblock %}
+
+{% block content %}
+<div class="container">
+
+    <div class="editor-header">
+        <h2><i class="fa-solid fa-pen"></i> Edit: {{ session.title }}</h2>
+        <span class="type-badge type-badge--{{ session.type }}">
+            <i class="fa-solid {{ types[session.type].icon }}"></i>
+            {{ types[session.type].label }}
+        </span>
+    </div>
+
+    <!-- ═══ TAB NAV ═══ -->
+    <div class="editor-tabs">
+        <button class="editor-tab active" onclick="showEditorTab('basics', this)">
+            <i class="fa-solid fa-sliders"></i> Basics
+        </button>
+        <button class="editor-tab" onclick="showEditorTab('stats', this)">
+            <i class="fa-solid fa-chart-bar"></i> Stats Banner
+        </button>
+        <button class="editor-tab" onclick="showEditorTab('talking', this)">
+            <i class="fa-solid fa-comments"></i> Talking Points
+        </button>
+        <button class="editor-tab" onclick="showEditorTab('practice', this)">
+            <i class="fa-solid fa-dumbbell"></i> Practice Qs
+        </button>
+        <button class="editor-tab" onclick="showEditorTab('cheatsheet', this)">
+            <i class="fa-solid fa-table-cells-large"></i> Cheat Sheet
+        </button>
+        <button class="editor-tab" onclick="showEditorTab('tips', this)">
+            <i class="fa-solid fa-lightbulb"></i> Tips
+        </button>
+        {% if session.type == 'pitch' %}
+        <button class="editor-tab" onclick="showEditorTab('pitchdata', this)">
+            <i class="fa-solid fa-rocket"></i> Pitch Data
+        </button>
+        {% endif %}
+    </div>
+
+    <!-- ═══ BASICS ═══ -->
+    <div class="editor-panel visible" id="editor-basics">
+        <div class="editor-card">
+            <h3>Session Info</h3>
+            <div class="form-group">
+                <label>Title</label>
+                <input type="text" id="ed-title" value="{{ session.title }}" class="ed-field" data-key="title">
+            </div>
+            <div class="form-group">
+                <label>Subtitle</label>
+                <input type="text" id="ed-subtitle" value="{{ session.subtitle or '' }}" class="ed-field" data-key="subtitle">
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Date</label>
+                    <input type="text" id="ed-date" value="{{ session.date or '' }}" class="ed-field" data-key="date">
+                </div>
+                <div class="form-group">
+                    <label>Format</label>
+                    <input type="text" id="ed-format" value="{{ session.format or '' }}" class="ed-field" data-key="format">
+                </div>
+            </div>
+            <button class="btn btn-primary" onclick="saveBasics()">
+                <i class="fa-solid fa-check"></i> Save Changes
+            </button>
+        </div>
+    </div>
+
+    <!-- ═══ STATS BANNER ═══ -->
+    <div class="editor-panel" id="editor-stats">
+        <div class="editor-card">
+            <h3>Stats Banner</h3>
+            <p class="editor-help">Key statistics shown at the top of the session view. Each stat has a large value and a short label.</p>
+            <div id="stats-list"></div>
+            <button class="btn btn-ghost" onclick="addStat()">
+                <i class="fa-solid fa-plus"></i> Add Stat
+            </button>
+            <hr>
+            <button class="btn btn-primary" onclick="saveStats()">
+                <i class="fa-solid fa-check"></i> Save Stats
+            </button>
+        </div>
+    </div>
+
+    <!-- ═══ TALKING POINTS ═══ -->
+    <div class="editor-panel" id="editor-talking">
+        <div class="editor-card">
+            <h3>Talking Points</h3>
+            <p class="editor-help">Each talking point has a question/prompt, rich speaker notes (HTML allowed), do/don't tips, and a source citation.</p>
+            <div id="tp-list"></div>
+            <button class="btn btn-ghost" onclick="addTalkingPoint()">
+                <i class="fa-solid fa-plus"></i> Add Talking Point
+            </button>
+            <hr>
+            <button class="btn btn-primary" onclick="saveTalkingPoints()">
+                <i class="fa-solid fa-check"></i> Save Talking Points
+            </button>
+        </div>
+    </div>
+
+    <!-- ═══ PRACTICE QUESTIONS ═══ -->
+    <div class="editor-panel" id="editor-practice">
+        <div class="editor-card">
+            <h3>Practice Questions</h3>
+            <p class="editor-help">Questions for the practice flashcard mode. Each question has key points that are revealed on request.</p>
+            <div id="pq-list"></div>
+            <button class="btn btn-ghost" onclick="addPracticeQuestion()">
+                <i class="fa-solid fa-plus"></i> Add Question
+            </button>
+            <hr>
+            <button class="btn btn-primary" onclick="savePracticeQuestions()">
+                <i class="fa-solid fa-check"></i> Save Practice Questions
+            </button>
+        </div>
+    </div>
+
+    <!-- ═══ CHEAT SHEET ═══ -->
+    <div class="editor-panel" id="editor-cheatsheet">
+        <div class="editor-card">
+            <h3>Cheat Sheet Cards</h3>
+            <p class="editor-help">Quick-reference cards with key data points. Each card has a title, icon emoji, and a list of label/value pairs.</p>
+            <div id="cs-list"></div>
+            <button class="btn btn-ghost" onclick="addCheatsheetCard()">
+                <i class="fa-solid fa-plus"></i> Add Card
+            </button>
+            <hr>
+            <button class="btn btn-primary" onclick="saveCheatsheet()">
+                <i class="fa-solid fa-check"></i> Save Cheat Sheet
+            </button>
+        </div>
+    </div>
+
+    <!-- ═══ TIPS ═══ -->
+    <div class="editor-panel" id="editor-tips">
+        <div class="editor-card">
+            <h3>
+                {% if session.type == 'interview' %}On-Camera Tips
+                {% elif session.type == 'presentation' %}Presentation Tips
+                {% else %}Pitch Tips{% endif %}
+            </h3>
+            <p class="editor-help">Quick reminders shown at the top of the notes section. HTML is allowed.</p>
+            <div id="tips-list"></div>
+            <button class="btn btn-ghost" onclick="addTip()">
+                <i class="fa-solid fa-plus"></i> Add Tip
+            </button>
+            <hr>
+            <button class="btn btn-primary" onclick="saveTips()">
+                <i class="fa-solid fa-check"></i> Save Tips
+            </button>
+        </div>
+    </div>
+
+    <!-- ═══ PITCH DATA (pitch type only) ═══ -->
+    {% if session.type == 'pitch' %}
+    <div class="editor-panel" id="editor-pitchdata">
+        <div class="editor-card">
+            <h3>Pitch Scripts</h3>
+            <p class="editor-help">Write your pitch at three lengths. HTML allowed.</p>
+            <div class="form-group">
+                <label>30-Second Pitch</label>
+                <textarea id="pitch-30" rows="4" class="ed-textarea">{{ session.pitch_variants['30sec'] if session.pitch_variants else '' }}</textarea>
+            </div>
+            <div class="form-group">
+                <label>60-Second Pitch</label>
+                <textarea id="pitch-60" rows="6" class="ed-textarea">{{ session.pitch_variants['60sec'] if session.pitch_variants else '' }}</textarea>
+            </div>
+            <div class="form-group">
+                <label>2-Minute Pitch</label>
+                <textarea id="pitch-120" rows="10" class="ed-textarea">{{ session.pitch_variants['2min'] if session.pitch_variants else '' }}</textarea>
+            </div>
+
+            <h3 style="margin-top:1.5rem">Key Messages</h3>
+            <p class="editor-help">Core messages to check off during your pitch.</p>
+            <div id="km-list"></div>
+            <button class="btn btn-ghost" onclick="addKeyMessage()">
+                <i class="fa-solid fa-plus"></i> Add Message
+            </button>
+
+            <h3 style="margin-top:1.5rem">Objection Handling</h3>
+            <p class="editor-help">Anticipated questions and your prepared responses.</p>
+            <div id="obj-list"></div>
+            <button class="btn btn-ghost" onclick="addObjection()">
+                <i class="fa-solid fa-plus"></i> Add Objection
+            </button>
+
+            <hr>
+            <button class="btn btn-primary" onclick="savePitchData()">
+                <i class="fa-solid fa-check"></i> Save Pitch Data
+            </button>
+        </div>
+    </div>
+    {% endif %}
+
+    <!-- Save indicator -->
+    <div class="save-toast" id="save-toast">
+        <i class="fa-solid fa-check-circle"></i> Saved!
+    </div>
+
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+const SESSION = {{ session_json|safe }};
+const SESSION_ID = "{{ session.id }}";
+const API_URL = "/api/session/" + SESSION_ID;
+</script>
+<script src="{{ url_for('static', filename='js/editor.js') }}"></script>
+{% endblock %}

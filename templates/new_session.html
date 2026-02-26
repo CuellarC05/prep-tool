@@ -1,0 +1,85 @@
+{% extends "base.html" %}
+{% block title %}New Session{% endblock %}
+
+{% block content %}
+<div class="container container--narrow">
+    <div class="form-page">
+        <h2><i class="fa-solid fa-plus"></i> Create New Session</h2>
+        <p class="form-intro">Choose a type and fill in the basics, or <strong>import from an existing file</strong> to auto-generate content.</p>
+
+        <!-- ═══ CREATION OPTIONS ═══ -->
+        <div class="creation-options">
+            <a href="{{ url_for('import_session') }}" class="creation-card creation-card--import">
+                <div class="creation-card-icon">
+                    <i class="fa-solid fa-file-import"></i>
+                </div>
+                <div class="creation-card-body">
+                    <h3>Import from File</h3>
+                    <p>Auto-extract talking points, stats, and practice questions from an existing presentation, HTML file, or text document.</p>
+                    <span class="creation-card-hint">
+                        <i class="fa-solid fa-sparkles"></i> Fastest way to get started
+                    </span>
+                </div>
+                <i class="fa-solid fa-arrow-right creation-card-arrow"></i>
+            </a>
+        </div>
+
+        <div class="divider-text">
+            <span>or create from scratch</span>
+        </div>
+
+        <form method="POST" action="{{ url_for('new_session') }}" class="prep-form">
+            <!-- Type selector -->
+            <div class="type-selector">
+                {% for key, meta in types.items() %}
+                <label class="type-option">
+                    <input type="radio" name="type" value="{{ key }}" {% if key == 'interview' %}checked{% endif %}>
+                    <div class="type-option-card">
+                        <i class="fa-solid {{ meta.icon }}"></i>
+                        <strong>{{ meta.label }}</strong>
+                        {% if key == 'interview' %}
+                        <span>Question cards, speaker notes, on-camera tips</span>
+                        {% elif key == 'presentation' %}
+                        <span>Slide notes, rehearsal timer, key messages</span>
+                        {% else %}
+                        <span>Elevator pitch, countdown, objection handling</span>
+                        {% endif %}
+                    </div>
+                </label>
+                {% endfor %}
+            </div>
+
+            <!-- Basic info -->
+            <div class="form-group">
+                <label for="title">Session Title *</label>
+                <input type="text" id="title" name="title" required
+                       placeholder="e.g., Childcare Costs Interview, AI Pitch Round 2">
+            </div>
+            <div class="form-group">
+                <label for="subtitle">Subtitle / Topic</label>
+                <input type="text" id="subtitle" name="subtitle"
+                       placeholder="e.g., UT System AI Grant Proposal">
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="date">Date</label>
+                    <input type="text" id="date" name="date"
+                           placeholder="e.g., March 15, 2026">
+                </div>
+                <div class="form-group">
+                    <label for="format">Format</label>
+                    <input type="text" id="format" name="format"
+                           placeholder="e.g., TV interview, In-person pitch">
+                </div>
+            </div>
+
+            <div class="form-actions">
+                <a href="{{ url_for('dashboard') }}" class="btn btn-ghost">Cancel</a>
+                <button type="submit" class="btn btn-primary btn-lg">
+                    <i class="fa-solid fa-plus"></i> Create Session
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}

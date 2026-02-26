@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login — Hibbs Institute Prep Tool</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <style>
+        .login-wrapper {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #003A63 0%, #1A5276 50%, #E87722 100%);
+            padding: 2rem;
+        }
+        .login-card {
+            background: #fff;
+            border-radius: 16px;
+            padding: 3rem 2.5rem;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            width: 100%;
+            max-width: 420px;
+            text-align: center;
+        }
+        .login-logo { height: 56px; margin-bottom: 1.5rem; }
+        .login-card h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.5rem;
+            color: #003A63;
+            margin-bottom: 0.3rem;
+        }
+        .login-card p {
+            color: #6B7280;
+            font-size: 0.88rem;
+            margin-bottom: 2rem;
+        }
+        .login-form { display: flex; flex-direction: column; gap: 1rem; text-align: left; }
+        .login-form label {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: #374151;
+        }
+        .login-form input {
+            width: 100%;
+            padding: 0.65rem 0.9rem;
+            border: 1px solid #E5E7EB;
+            border-radius: 8px;
+            font-family: 'Open Sans', sans-serif;
+            font-size: 0.9rem;
+            color: #1F2937;
+            background: #F9FAFB;
+            transition: border-color 0.2s;
+            margin-top: 0.25rem;
+            box-sizing: border-box;
+        }
+        .login-form input:focus {
+            outline: none;
+            border-color: #003A63;
+            box-shadow: 0 0 0 3px rgba(0,58,99,0.1);
+        }
+        .login-btn {
+            width: 100%;
+            padding: 0.75rem;
+            background: #003A63;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background 0.2s;
+            margin-top: 0.5rem;
+        }
+        .login-btn:hover { background: #E87722; }
+        .login-error {
+            background: #FEE2E2;
+            color: #DC2626;
+            padding: 0.6rem 1rem;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        .login-footer {
+            margin-top: 2rem;
+            font-size: 0.72rem;
+            color: #9CA3AF;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-wrapper">
+        <div class="login-card">
+            {% if logo %}
+            <img src="{{ logo }}" alt="Hibbs Institute" class="login-logo"
+                 style="background: #003A63; padding: 8px 16px; border-radius: 8px;">
+            {% endif %}
+            <h1><i class="fa-solid fa-shield-halved" style="color: #E87722;"></i> Prep Tool</h1>
+            <p>Interview &middot; Presentation &middot; Pitch</p>
+
+            {% if error %}
+            <div class="login-error"><i class="fa-solid fa-circle-exclamation"></i> {{ error }}</div>
+            {% endif %}
+
+            <form method="POST" class="login-form">
+                <div>
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" required autofocus
+                           placeholder="Enter your username">
+                </div>
+                <div>
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required
+                           placeholder="Enter your password">
+                </div>
+                <button type="submit" class="login-btn">
+                    <i class="fa-solid fa-right-to-bracket"></i> Sign In
+                </button>
+            </form>
+
+            <div class="login-footer">
+                Hibbs Institute for Business &amp; Economic Research<br>
+                The University of Texas at Tyler
+            </div>
+        </div>
+    </div>
+</body>
+</html>

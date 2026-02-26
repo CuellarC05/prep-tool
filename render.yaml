@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: prep-tool
+    runtime: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app --bind 0.0.0.0:$PORT --workers 2
+    envVars:
+      - key: PREP_TOOL_SECRET
+        generateValue: true
+      - key: PREP_TOOL_USER
+        sync: false
+      - key: PREP_TOOL_PASS
+        sync: false
+      - key: FLASK_DEBUG
+        value: 0
+      - key: PYTHON_VERSION
+        value: 3.12.0
